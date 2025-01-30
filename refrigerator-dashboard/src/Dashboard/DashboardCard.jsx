@@ -1,6 +1,6 @@
 import React from "react";
 
-const DashboardCard = ({ heading, value, weather, image }) => {
+const DashboardCard = ({ heading, value, secondaryValue, image }) => {
   return (
     <div className="card-container">
       <div className="card">
@@ -16,7 +16,7 @@ const DashboardCard = ({ heading, value, weather, image }) => {
           />
           <div className="card-values">
             <div className="main-value">{value}</div>
-            <div className="weather-label">{weather}</div>
+            <div className="weather-label">{secondaryValue}</div>
           </div>
         </div>
 

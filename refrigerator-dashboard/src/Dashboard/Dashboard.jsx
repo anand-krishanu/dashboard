@@ -1,51 +1,45 @@
 import React from "react";
 import DashboardCard from "./DashboardCard";
 import "./Dashboard.css";
+import Header from "../DashboardHeader/DashboardHeader";
 
 const Dashboard = () => {
   return (
     <div className="dashboard">
-      <header className="dashboard-header">
-        <h1>Whatever this is</h1>
-      </header>
-      
+      <header className="dashboard-header" />
+      <Header />
+
       <div className="cards-container">
         <div className="cards-grid">
           <DashboardCard
-            heading="smth1"
-            value="null"
-            weather="null"
-            image="https://cdn-icons-png.flaticon.com/512/2698/2698194.png"
+            heading="Temperature"
+            value="22°C"
+            secondaryValue="Sunny"
+            image="src\assets\sun.png"
           />
           <DashboardCard
-            heading="smth2"
-            value="null"
-            weather="null"
-            image="https://cdn-icons-png.flaticon.com/512/1053/1053244.png"
+            heading="Humidity"
+            value="65%"
+            secondaryValue="Moderate"
+            image="src\assets\humidity.png"
           />
           <DashboardCard
-            heading="smth3"
-            value="null"
-            weather="null"
-            image="https://cdn-icons-png.flaticon.com/512/3064/3064494.png"
-          />
-          <DashboardCard
-            heading="smth4"
-            value="null"
-            weather="null"
-            image="https://cdn-icons-png.flaticon.com/512/2316/2316631.png"
-          />
-          <DashboardCard
-            heading="smth5"
-            value="null"
-            weather="null"
-            image="https://cdn-icons-png.flaticon.com/512/2917/2917631.png"
-          />
-          <DashboardCard
-            heading="smth6"
-            value="null"
-            weather="null"
+            heading="Live Location"
+            value="Gurugram"
+            secondaryValue="Haryana"
             image="https://cdn-icons-png.flaticon.com/512/684/684908.png"
+          />
+          <DashboardCard
+            heading="Pathogen Gas Detected"
+            value="Gas Name"
+            secondaryValue="Normal"
+            image="src\assets\pathogen.png"
+          />
+          <DashboardCard
+            heading="Pathogen Removed"
+            value="In Process"
+            secondaryValue="Low"
+            image="src\assets\fridge.png"
           />
         </div>
       </div>

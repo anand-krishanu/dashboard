@@ -1,3 +1,21 @@
+.navbar {
+  background: linear-gradient(90deg, 
+    rgba(17,15,16,1) 0%, 
+    rgba(17,15,16,1) 53%, 
+    rgba(39,37,38,1) 100%
+  );
+  margin-top: -30px;
+}
+
+.navbar-brand {
+  font-family: 'Inter', sans-serif;
+  color: #a0a0a0;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
 .dashboard {
   min-height: 100vh;
   background: rgb(17,15,16);
@@ -25,14 +43,20 @@
 .cards-container {
   max-width: 1400px;
   margin: 0 auto;
+  margin-top: 30px;
 }
 
 .cards-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 2rem;
   padding: 1rem;
-  justify-items: center;
+}
+
+.card-container {
+  flex: 1 1 calc(33.333% - 2rem);
+  max-width: calc(33.333% - 2rem);
 }
 
 .card-container {
@@ -84,7 +108,7 @@
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .card-icon {
@@ -99,10 +123,10 @@
 
 .main-value {
   color: #f5f5f5;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 600;
   line-height: 1;
-  margin-bottom: 0.5rem;
+  margin-top: 1rem;
 }
 
 .weather-label {
@@ -130,10 +154,10 @@
   .cards-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
-  .card-container:nth-child(n+5) {
-    grid-column: span 1;
-    max-width: 100%;
+
+  .card-container {
+    flex: 1 1 calc(50% - 2rem);
+    max-width: calc(50% - 2rem);
   }
 }
 
@@ -155,6 +179,11 @@
     width: 48px;
     height: 48px;
   }
+
+  .card-container {
+    flex: 1 1 calc(50% - 2rem);
+    max-width: calc(50% - 2rem);
+  }
 }
 
 @media (max-width: 480px) {
@@ -172,5 +201,10 @@
   
   .main-value {
     font-size: 2rem;
+  }
+
+  .card-container {
+    flex: 1 1 100%;
+    max-width: 100%;
   }
 }
