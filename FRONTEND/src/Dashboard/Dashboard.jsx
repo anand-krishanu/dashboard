@@ -3,12 +3,17 @@ import DashboardCard from "./DashboardCard";
 import "./Dashboard.css";
 import Header from "../DashboardHeader/DashboardHeader";
 
+import SunIcon from "/src/assets/sun.png";
+import HumidityIcon from "/src/assets/humidity.png";
+import PathogenIcon from "/src/assets/pathogen.png";
+import FridgeIcon from "/src/assets/fridge.png";
+
 const Dashboard = () => {
   const [sensorData, setSensorData] = useState(null);
   const [status, setStatus] = useState("Offline");
 
   useEffect(() => {
-    const socket = new WebSocket("ws://localhost:8080/ws/sensor");
+    const socket = new WebSocket(import.meta.env.VITE_WEBSOCKET_URL);
 
     socket.onopen = () => {
       console.log("WebSocket Connected");
@@ -49,19 +54,19 @@ const Dashboard = () => {
             heading="Temperature"
             value={sensorData ? `${sensorData.temperature}°C` : "N/A"}
             secondaryValue={status}
-            image="src/assets/sun.png"
+            image={SunIcon}
           />
           <DashboardCard
             heading="Humidity"
             value={sensorData ? `${sensorData.humidity}%` : "N/A"}
             secondaryValue={status}
-            image="src/assets/humidity.png"
+            image={HumidityIcon}
           />
           <DashboardCard
             heading="Pathogen Gas Detected"
             value={sensorData ? (sensorData.pathogen ? "Yes" : "No") : "N/A"}
             secondaryValue={status}
-            image="src/assets/pathogen.png"
+            image={PathogenIcon}
           />
           <DashboardCard
             heading="Live Location"
@@ -73,7 +78,7 @@ const Dashboard = () => {
             heading="Pathogen Removed"
             value="In Process"
             secondaryValue="Low"
-            image="src/assets/fridge.png"
+            image={FridgeIcon}
           />
         </div>
       </div>
